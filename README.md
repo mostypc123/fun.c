@@ -28,3 +28,14 @@ int entry(heap_array args) {
 ```
 
 `let` is a macro to `const auto` and `var` is a macro to `auto`.
+
+Even with the `heap_array`, the code runs very fast, benchmarked with 
+`hyperfine -N` on an AMD Ryzen 5 5600U:
+
+| Lang | Note | Time |
+|------|------|------|
+| C | Using -O3 with puts | 465.4 µs ±  60.6 µs |
+| fun.c | Code above w/out arg checks or vars with -O3 | 560.3 µs ±  65.0 µs |
+| Nim | Using echo, ORC, -d:release, C backend | 491.0 µs ±  67.9 µs |
+| Rust | With -C opt-level=3 using println! | 673.5 µs ±  80.2 µs |
+| Zig | It took 7ms. Zig sucks. | `sudo pacman -Rns zig` |
