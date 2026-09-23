@@ -6,3 +6,4 @@
 #include "val.h"
 #include "io.h"
 #include "num.h"
+#include "err.h"

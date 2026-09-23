@@ -11,7 +11,8 @@ func_sources = [
   'src/io.c',
   'src/mem.c',
   'src/str.c',
-  'src/num.c'
+  'src/num.c',
+  'src/err.c'
 ]
 
 func_headers = [
@@ -21,7 +22,8 @@ func_headers = [
   'include/mem.h',
   'include/val.h',
   'include/base.h',
-  'include/num.h'
+  'include/num.h',
+  'include/err.h'
 ]
 
 func_dep = declare_dependency(

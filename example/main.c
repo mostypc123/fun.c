@@ -1,4 +1,6 @@
+#include "err.h"
 #include "io.h"
+#include "num.h"
 #include "str.h"
 #include <base.h>
 
@@ -34,6 +36,14 @@ int entry(heap_array args) {
   print("you said: ");
   println(text->data);
   delete(text);
+
+  printf("%d\n", clamp(5, 10, 15));
+
+  result_print_set(RESULT_PRINT_SETTER_OK, "\033[92;1mok\033[0m: ");
+
+  let test_result = result(0, "testing results");
+  print_result(test_result);
+  delete(test_result);
 
   return 0;
 }
