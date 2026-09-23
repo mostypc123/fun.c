@@ -5,3 +5,4 @@
 #include "str.h"
 #include "val.h"
 #include "io.h"
+#include "num.h"

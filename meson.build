@@ -1,6 +1,6 @@
 project('func', 'c',
   version: '0.1.0',
-  default_options: ['warning_level=3', 'werror=false', 'optimization=3', 
+  default_options: ['warning_level=3', 'werror=false', 'optimization=3',
                     'b_lto=true', 'c_std=23'])
 
 cc = meson.get_compiler('c')
@@ -10,7 +10,8 @@ func_sources = [
   'src/array.c',
   'src/io.c',
   'src/mem.c',
-  'src/str.c'
+  'src/str.c',
+  'src/num.c'
 ]
 
 func_headers = [
@@ -19,7 +20,8 @@ func_headers = [
   'include/io.h',
   'include/mem.h',
   'include/val.h',
-  'include/base.h'
+  'include/base.h',
+  'include/num.h'
 ]
 
 func_dep = declare_dependency(
