@@ -9,7 +9,8 @@ func_sources = [
   'src/func.c',
   'src/array.c',
   'src/io.c',
-  'src/mem.c'
+  'src/mem.c',
+  'src/str.c'
 ]
 
 func_headers = [

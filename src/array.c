@@ -7,7 +7,7 @@ heap_array heap_array_init(void) {
   
   result->current_size = 5;
   result->length = 0;
-  result->data = malloc(result->current_size);
+  result->data = malloc(result->current_size * sizeof(void*));
 
   return result;
 }
@@ -17,7 +17,7 @@ heap_array heap_array_from_carr(const void* arr, size_t length) {
   
   result->current_size = length;
   result->length = length;
-  result->data = malloc(length);
+  result->data = malloc(length * sizeof(void*));
   
   for (size_t i = 0; i < length; i++) {
     ((void**)result->data)[i] = ((void**)arr)[i];

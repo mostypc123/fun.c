@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdio.h>
+#include "str.h"
 
 #define println puts
 void print(const char* msg);
