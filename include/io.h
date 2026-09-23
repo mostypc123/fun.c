@@ -8,3 +8,4 @@ void print(const string msg);
 void eprintln(const string msg);
 void eprint(const string msg);
 heap_string input();
+bool file_exists(const string path);

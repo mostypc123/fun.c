@@ -1,7 +1,3 @@
-#include "err.h"
-#include "io.h"
-#include "num.h"
-#include "str.h"
 #include <base.h>
 
 int entry(heap_array args) {

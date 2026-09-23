@@ -2,6 +2,7 @@
 #include "../include/str.h"
 #include "../include/io.h"
 #include "../include/array.h"
+#include <unistd.h>
 
 void print(const string msg) {
   fputs(msg, stdout);
@@ -33,4 +34,8 @@ heap_string input(void) {
   heap_string result = heap_string_init(buffer);
   free(buffer);
   return result;
+}
+
+bool file_exists(const string path) {
+  return !access(path, F_OK);
 }
