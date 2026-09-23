@@ -41,5 +41,10 @@ int entry(heap_array args) {
   print_result(test_result);
   delete(test_result);
 
+  let my_number = 50;
+  var my_str = int_to_string(my_number);
+  printf("converted to string: %s\n", my_str->data);
+  delete(my_str);
+
   return 0;
 }

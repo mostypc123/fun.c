@@ -4,6 +4,7 @@ project('func', 'c',
                     'b_lto=true', 'c_std=23'])
 
 cc = meson.get_compiler('c')
+libm = cc.find_library('m', required: false)
 
 func_sources = [
   'src/func.c',
@@ -31,7 +32,7 @@ func_dep = declare_dependency(
 )
 
 func_lib = shared_library('func', func_sources,
-  dependencies: func_dep,
+  dependencies: [func_dep, libm],
   install: true,
   override_options: ['b_lundef=false'],
 )
