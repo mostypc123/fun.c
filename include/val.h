@@ -11,3 +11,5 @@
   #define DEBUG 0
 #endif
 #define debug if(DEBUG)
+
+#define __FUNCTION_USES_SHARED_BUF

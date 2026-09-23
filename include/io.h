@@ -7,3 +7,4 @@
 void print(const char* msg);
 void eprintln(const char* msg);
 void eprint(const char* msg);
+heap_string input();

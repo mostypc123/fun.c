@@ -6,7 +6,8 @@
 #include "../include/array.h"
 
 heap_string heap_string_init(const char* s) {
-  return heap_array_from_carr(s, strlen(s) + 1);
+  const char* ns = s ? s : "";
+  return heap_array_from_carr(ns, strlen(ns) + 1);
 }
 
 char* heap_string_dup(heap_string s) {
@@ -31,4 +32,11 @@ bool starts_with(const char* full, const char* find) {
   }
 
   return true;
+}
+
+__FUNCTION_USES_SHARED_BUF char* char_to_str(char c) {
+  static __thread char result[2];
+  result[0] = c;
+  result[1] = '\0';
+  return result;
 }

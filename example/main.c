@@ -28,5 +28,12 @@ int entry(heap_array args) {
   }
   delete(my_heap_string);
 
+  print("some input! ");
+  fflush(stdout);
+  var text = input();
+  print("you said: ");
+  println(text->data);
+  delete(text);
+
   return 0;
 }
