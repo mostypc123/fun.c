@@ -27,14 +27,16 @@ func_headers = [
   'include/err.h'
 ]
 
-func_dep = declare_dependency(
-  include_directories: include_directories('include'),
-)
-
 func_lib = shared_library('func', func_sources,
-  dependencies: [func_dep, libm],
+  include_directories: include_directories('include'),
+  dependencies: [libm],
   install: true,
   override_options: ['b_lundef=false'],
+)
+
+func_dep = declare_dependency(
+  include_directories: include_directories('include'),
+  link_with: func_lib,
 )
 
 install_headers(func_headers)
