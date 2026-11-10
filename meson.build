@@ -1,7 +1,7 @@
 project('func', 'c',
   version: '0.1.0',
   default_options: ['warning_level=3', 'werror=false', 'optimization=3',
-                    'b_lto=true', 'c_std=23'])
+                    'b_lto=true', 'c_std=c23'])
 
 cc = meson.get_compiler('c')
 libm = cc.find_library('m', required: false)
