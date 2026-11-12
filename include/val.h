@@ -13,3 +13,5 @@
 #define debug if(DEBUG)
 
 #define __FUNCTION_USES_SHARED_BUF
+
+#define cancel (void)
