@@ -30,7 +30,7 @@ int entry(heap_array args) {
 `let` is a macro to `const auto` and `var` is a macro to `auto`.
 
 Even with the `heap_array`, the code runs very fast, benchmarked with 
-`hyperfine -N` on an AMD Ryzen 5 5600U:
+`hyperfine -N` on an AMD Ryzen 5 5600U with 16GB DDR4 ram:
 
 | Lang | Note | Time |
 |------|------|------|
@@ -38,12 +38,14 @@ Even with the `heap_array`, the code runs very fast, benchmarked with
 | fun.c | Code above w/out arg checks or vars with -O3 | 560.3 µs ±  65.0 µs |
 | Nim | Using echo, ORC, -d:release, C backend | 491.0 µs ±  67.9 µs |
 | Rust | With -C opt-level=3 using println! | 673.5 µs ±  80.2 µs |
-| Zig | It took 7ms. Zig sucks. | `sudo pacman -Rns zig` |
 
-for the zig lovers, proof:
+## Compilation
 
-<img width="792" height="180" alt="image" src="https://github.com/user-attachments/assets/572fe52f-0f2e-43bd-a656-1dcc2d43e4f1" />
+We use meson. If you made a build system that has globbing please tell me omfg
 
-dont ask about my working dir
+```sh
+meson setup build
+ninja -C build
+```
 
-the zig code is same as in https://ziglang.org/learn/samples/
+You can test the built fun.c by running `./build/example`.
